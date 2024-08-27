@@ -55,25 +55,25 @@ struct ContentView: View {
     
     var body: some View {
         
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
+
             Form {
                 Section {
 //                    Text(self.store.state.count)
-                    Text("\(viewStore.count)")
+                    Text("\(store.count)")
                     Button("Decrement") {
-                        viewStore.send(.decrementButtonTapped)
+                        store.send(.decrementButtonTapped)
                     }
                     
                     Button("Increment") {
-                        viewStore.send(.imcrementButtonTapped)
+                        store.send(.imcrementButtonTapped)
                     }
                 }
                 
                 Section {
                     Button("Get fact") {
-                        viewStore.send(.getFactButtonTapped)
+                        store.send(.getFactButtonTapped)
                     }
-                    if let fact = viewStore.fact {
+                    if let fact = store.fact {
                         Text("Some fact")
                     }
                 }
@@ -81,16 +81,16 @@ struct ContentView: View {
                 Section {
                     if viewStore.isTimerOn {
                         Button("Stop timer") {
-                            viewStore.send(.toggleTimerButtonTapped)
+                            store.send(.toggleTimerButtonTapped)
                         }
                     } else {
                         Button("Start timer") {
-                            viewStore.send(.toggleTimerButtonTapped)
+                            store.send(.toggleTimerButtonTapped)
                         }
                     }
                 }
             }
-        }
+        
     }
 }
 

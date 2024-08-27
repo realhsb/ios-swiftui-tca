@@ -55,25 +55,25 @@ struct ContentView: View {
     
     var body: some View {
         
-
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
             Form {
                 Section {
 //                    Text(self.store.state.count)
-                    Text("\(store.count)")
+                    Text("\(viewStore.count)")
                     Button("Decrement") {
-                        store.send(.decrementButtonTapped)
+                        viewStore.send(.decrementButtonTapped)
                     }
                     
                     Button("Increment") {
-                        store.send(.imcrementButtonTapped)
+                        viewStore.send(.imcrementButtonTapped)
                     }
                 }
                 
                 Section {
                     Button("Get fact") {
-                        store.send(.getFactButtonTapped)
+                        viewStore.send(.getFactButtonTapped)
                     }
-                    if let fact = store.fact {
+                    if let fact = viewStore.fact {
                         Text("Some fact")
                     }
                 }
@@ -81,19 +81,24 @@ struct ContentView: View {
                 Section {
                     if viewStore.isTimerOn {
                         Button("Stop timer") {
-                            store.send(.toggleTimerButtonTapped)
+                            viewStore.send(.toggleTimerButtonTapped)
                         }
                     } else {
                         Button("Start timer") {
-                            store.send(.toggleTimerButtonTapped)
+                            viewStore.send(.toggleTimerButtonTapped)
                         }
                     }
                 }
             }
-        
+        }
     }
 }
 
-//#Preview {
-//    ContentView(store: <#StoreOf<CounterFeature>#>)
-//}
+#Preview {
+    ContentView(
+        store: Store(initialState: CounterFeature.State()) {
+            CounterFeature()
+                ._printChanges()    // print on console
+        }
+    )
+}

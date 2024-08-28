@@ -8,6 +8,27 @@
 import SwiftUI
 import ComposableArchitecture
 
+struct NumberFactClient {
+    var fetch: @Sendable (Int) async throws -> String
+}
+
+extension NumberFactClient: DependencyKey {
+    static let liveValue = Self { number in
+        let (data, _) = try await URLSession.shared.data(
+            from: URL(string: "http://www.numbersapi.com/\(number)")!
+        )
+        return String(decoding: data, as: UTF8.self)
+        
+    }
+}
+
+extension DependencyValues {
+    var numberFact: NumberFactClient {
+        get { self[NumberFactClient.self] }
+        set { self[NumberFactClient.self] = newValue}
+    }
+}
+
 struct CounterFeature: Reducer {
     struct State: Equatable {   // State는 무조건 Equatable 프로토콜 준수
         var count = 0
@@ -29,8 +50,11 @@ struct CounterFeature: Reducer {
         case timer
     }
     
-    // ReducerOf<Self>
-    var body: some Reducer<State, Action> { // return Effect
+    @Dependency(\.continuousClock) var clock
+    @Dependency(\.numberFact) var numberFact
+    
+    // Reducer<State, Action>
+    var body: some ReducerOf<Self> { // return Effect
         Reduce { state, action in
             // state : 현재 상태, in-out parameter
             // action : 시스템으로 전달
@@ -50,16 +74,10 @@ struct CounterFeature: Reducer {
                 state.isLoadingFact = true
                 /// Mutable capture of 'inout' parameter 'state' is not allowed in concurrently-executing code 에러 발생 -> [count = state.count ] 진행
                 return .run { [count = state.count ] send in   // 비동기
-                    try await Task.sleep(for: .seconds(1))
-                    let (data, _) = try await URLSession.shared.data(
-                        from: URL(string: "http://www.numbersapi.com/\(count)")!
-                    )
-                    let fact = String(decoding: data, as: UTF8.self)
-                    print(fact)
+                    try await send(.factResponse(self.numberFact.fetch(count)))
                     
                     // 바뀐 값을 어떻게 화면에 업데이트 하나? mutate 값을 ...? state.fact = fact 이렇게 하면 안 됨
                     // send 를 통해 값을 업데이트 하는 action을 정의한다.
-                    await send(.factResponse(fact))
                 }
                 
             case .incrementButtonTapped:
@@ -76,10 +94,7 @@ struct CounterFeature: Reducer {
                 if state.isTimerOn {
                     // Start the timer
                     return .run { send in
-                        while true {
-                            try await Task.sleep(for: .seconds(1))
-//                            state.count += 1 // 이렇게 하면 안 된다. 여기서 값 바꾸면 안 돼유
-                            // send(.incrementButtonTapped) // 이것도 안 된다. 증가 버튼이 눌린 게 아니기 때문! 타이머 동작 액션을 추가한다.
+                        for await _ in self.clock.timer(interval: .seconds(1)) {
                             await send(.timerTicked)
                         }
                     }
@@ -87,8 +102,6 @@ struct CounterFeature: Reducer {
                 } else {
                     return .cancel(id: CancelID.timer)  // 연결한 action을 cancel
                 }
-                return .none
-
             }
         }
     }

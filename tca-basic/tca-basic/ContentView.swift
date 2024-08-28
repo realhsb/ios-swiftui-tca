@@ -25,6 +25,10 @@ struct CounterFeature: Reducer {
         case toggleTimerButtonTapped
     }
     
+    private enum CancelID {
+        case timer
+    }
+    
     // ReducerOf<Self>
     var body: some Reducer<State, Action> { // return Effect
         Reduce { state, action in
@@ -79,9 +83,9 @@ struct CounterFeature: Reducer {
                             await send(.timerTicked)
                         }
                     }
-                    .cancellable(id: "timer") // 취소 effect. 같은 id를 통해 재사용 가능?
+                    .cancellable(id: CancelID.timer) // 취소 effect 연결. 같은 id를 통해 해당 action을 cancel 할 수 있다.
                 } else {
-                    // Stop the timer
+                    return .cancel(id: CancelID.timer)  // 연결한 action을 cancel
                 }
                 return .none
 

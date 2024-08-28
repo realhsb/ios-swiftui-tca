@@ -16,7 +16,7 @@ struct CounterFeature: Reducer {
         var isTimerOn = false
     }
     
-    enum Action {   // user's doing
+    enum Action: Equatable {   // user's doing
         case decrementButtonTapped
         case factResponse(String)
         case getFactButtonTapped

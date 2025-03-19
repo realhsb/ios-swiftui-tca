@@ -29,3 +29,8 @@ class AppState: ObservableObject {
     let bio: String
   }
 }
+
+struct PrimeAlert: Identifiable {
+    let prime: Int
+    var id: Int { self.prime }
+}

@@ -8,23 +8,6 @@
 import SwiftUI
 import Combine
 
-struct WolframAlphaResult: Decodable {
-  let queryresult: QueryResult
-
-  struct QueryResult: Decodable {
-    let pods: [Pod]
-
-    struct Pod: Decodable {
-      let primary: Bool?
-      let subpods: [SubPod]
-
-      struct SubPod: Decodable {
-        let plaintext: String
-      }
-    }
-  }
-}
-
 func wolframAlpha(
   query: String,
   callback: @escaping (WolframAlphaResult?) -> Void
@@ -84,8 +67,13 @@ struct ContentView: View {
                 NavigationLink(destination: CounterView(state: self.state)) {
                     Text("Counter Demo")
                 }
-                
-                NavigationLink(destination: EmptyView()) {
+            
+                NavigationLink(
+                    destination: FavoritePrimesView(
+                        favoritePrimes: self.$state.favoritePrimes,
+                        activityFeed: self.$state.activityFeed
+                    )
+                ) {
                     Text("Favorite primes")
                 }
             }
@@ -103,32 +91,27 @@ private func ordinal(_ n: Int) -> String {
 // BindableObject
 
 
-
-
 struct CounterView: View {
     
     @ObservedObject var state: AppState
     @State var isPrimeModelShown: Bool = false
-    @State var alertNthPrime: Int?
+    @State var alertNthPrime: PrimeAlert?
     @State var isNthPrimeButtonDisabled = false
     
+    func decrementCount() { self.state.count -= 1 }
+    func incrementCount() { self.state.count += 1 }
+    
     var body: some View {
-        
-//        self.$count // Binding<Int>
-        
+
         VStack {
             HStack {
-                Button {
-                    self.state.count -= 1
-                } label: {
+                Button(action: self.decrementCount) {
                     Text("-")
                 }
                 
                 Text("\(self.state.count)")
                 
-                Button {
-                    self.state.count += 1
-                } label: {
+                Button(action: self.incrementCount) {
                     Text("+")
                 }
             }
@@ -148,14 +131,20 @@ struct CounterView: View {
         .font(.title)
         .navigationBarTitle("Counter Demo")
         .sheet(isPresented: self.$isPrimeModelShown) {
-            IsPrimeModelView(state: self.state)
-        }11
+            IsPrimeModalView(
+//                state: self.state
+                activityFeed: self.$state.activityFeed,
+                count: self.state.count,
+                favoritePrimes: self.$state.favoritePrimes
+            )
+        }
     }
     
     func nthPrimeButtonAction() {
-        self.isNthPrimeButtonDisabled = true
+        self.isNthPrimeButtonDisabled = true    // self.isNthPrimeButtonDisabled = true -> true로 변환되지 않음
         nthPrime(self.state.count) { prime in
-          self.alertNthPrime = prime.map(PrimeAlert.init(prime:))
+//          self.alertNthPrime = prime.map(PrimeAlert.init(prime:))
+//            prime.map(PrimeAlert.init(prime: 0))
           self.isNthPrimeButtonDisabled = false
         }
       }
@@ -170,31 +159,74 @@ private func isPrime(_ p: Int) -> Bool {
     return true
 }
 
-struct IsPrimeModelView: View {
+struct IsPrimeModalView: View {
+    struct State {
+        var activityFeed: [AppState.Activity]
+        let count: Int
+        var favoritePrimes: [Int]
+    }
     
-    @ObservedObject var state: AppState
+//    @ObservedObject var state: AppState
+    
+    @Binding var activityFeed: [AppState.Activity]
+    let count: Int
+    @Binding var favoritePrimes: [Int]
     
     var body: some View {
         VStack {
-            if isPrime(self.state.count) {
-                Text("\(self.state.count) is prime")
+            if isPrime(self.count) {
+                Text("\(self.count) is prime")
                 
-                if self.state.favoritePrimes.contains(self.state.count) {
+                if self.favoritePrimes.contains(self.count) {
                     Button {
-                        self.state.favoritePrimes.removeAll(where: { $0 == self.state.count })
+                        self.removeFavoritePrime()
                     } label: {
                         Text("Remove from favorite primes")
                     }
                 } else {
                     Button {
-                        self.state.favoritePrimes.append(self.state.count)
+                        self.saveFavoritePrime()
                     } label: {
                         Text("Save to favorite primes")
                     }
                 }
             } else {
-                Text("\(self.state.count) is not prime")
+                Text("\(self.count) is not prime")
             }
+        }
+    }
+    
+    func removeFavoritePrime() {
+        self.favoritePrimes.removeAll(where: { $0 == self.count })
+        self.activityFeed.append(.init(timestamp: Date(), type: .removedFavoritePrime(self.count)))
+        self.activityFeed = []
+    }
+    
+    func saveFavoritePrime() {
+        self.favoritePrimes.append(self.count)
+        self.activityFeed.append(.init(timestamp: Date(), type: .addedFavoritePrime(self.count)))
+    }
+}
+
+extension AppState {
+    var isPrimeModalViewState: IsPrimeModalView.State {
+        get {
+            IsPrimeModalView.State(
+                activityFeed: self.activityFeed,
+                count: self.count,
+                favoritePrimes: self.favoritePrimes
+            )
+        }
+        set {
+            (
+                self.activityFeed,
+                self.count,
+                self.favoritePrimes
+            ) = (
+                newValue.activityFeed,
+                newValue.count,
+                newValue.favoritePrimes
+            )
         }
     }
 }

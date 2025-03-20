@@ -50,7 +50,8 @@ enum AppAction {
     case favoritePrimes(FavoritePrimesAction)
 }
 
-func appReducer(state: inout AppState, action: AppAction) {
+// state: inout AppState -> inout Int로 변경
+func counterReducer(state: inout Int, action: AppAction) {
     switch action {
     case .counter(.decrTapped):
         state.count -= 1

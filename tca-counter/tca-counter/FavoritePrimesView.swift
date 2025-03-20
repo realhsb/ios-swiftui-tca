@@ -50,6 +50,6 @@ struct FavoritePrimesView: View {
         else {
             return
         }
-        self.favoritePrimes = favoritePrimes
+        self.store.value.favoritePrimes = favoritePrimes
     }
 }

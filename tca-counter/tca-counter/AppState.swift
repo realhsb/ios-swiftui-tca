@@ -8,7 +8,7 @@
 import Foundation
 
 struct AppState {
-    var count = 0
+    var count: Int = 0
     var favoritePrimes: [Int] = []
     var loggedInUser: User?
     var activityFeed: [Activity] = []
@@ -54,11 +54,18 @@ enum AppAction {
 func counterReducer(state: inout Int, action: AppAction) {
     switch action {
     case .counter(.decrTapped):
-        state.count -= 1
+        state -= 1
         
     case .counter(.incrTapped):
-        state.count += 1
-        
+        state += 1
+    
+    default:
+        break
+    }
+}
+
+func primeModalReducer(state: inout AppState, action: AppAction) {
+    switch action {
     case .primeModal(.saveFavoritePrimeTapped):
         state.favoritePrimes.removeAll(where: { $0 == state.count })
         state.activityFeed.append(.init(timestamp: Date(), type: .removedFavoritePrime(state.count)))
@@ -67,19 +74,65 @@ func counterReducer(state: inout Int, action: AppAction) {
         state.favoritePrimes.append(state.count)
         state.activityFeed.append(.init(timestamp: Date(), type: .addedFavoritePrime(state.count)))
         
-    case let .favoritePrimes(.deleteFavoritePrimes(indexSet)):
-        for index in indexSet {
-            let prime = state.favoritePrimes[index]
-            state.favoritePrimes.remove(at: index)
-            state.activityFeed.append(
-                .init(
-                    timestamp: Date(),
-                    type: .removedFavoritePrime(prime)
-                )
-            )
-        }
+    default:
+        break
     }
 }
+
+func favoritePrimesReducer(state: inout AppState, action: AppAction) {
+    switch action {
+        case let .favoritePrimes(.deleteFavoritePrimes(indexSet)):
+            for index in indexSet {
+                let prime = state.favoritePrimes[index]
+                state.favoritePrimes.remove(at: index)
+                state.activityFeed.append(
+                    .init(
+                        timestamp: Date(),
+                        type: .removedFavoritePrime(prime)
+                    )
+                )
+            }
+        
+        default:
+            break
+        
+    }
+}
+
+// 큰 리듀서를 작은 리듀서로
+func combine<Value, Action> (
+    _ reducers: (inout Value, Action) -> Void...
+//    _ first: @escaping (inout Value, Action) -> Void,
+//    _ second: @escaping (inout Value, Action) -> Void
+) -> (inout Value, Action) -> Void {
+    
+    return { value, action in
+        for reducers in reducers {
+            reducers(&value, action)
+        }
+//        first(&value, action)
+//        second(&value, action)
+    }
+}
+
+func pullback<LocalValue, GlobalValue, Action>(
+    _ reducer: @escaping (inout LocalValue, Action) -> Void,
+    get: @escaping (GlobalValue) -> LocalValue,
+    set: @escaping (inout GlobalValue, LocalValue) -> Void
+) -> (inout GlobalValue, Action) -> Void {
+    
+    return { globalValue, action in
+        var localValue = get(globalValue)
+        reducer(&localValue, action)
+        set(&globalValue, localValue)
+    }
+}
+
+let appReducer = combine(
+    pullback(counterReducer, get: { $0.count }, set: { $0.count = $1 }),
+    primeModalReducer,
+    favoritePrimesReducer
+)
 
 final class Store<Value, Action>: ObservableObject {
     let reducer: (inout Value, Action) -> Void

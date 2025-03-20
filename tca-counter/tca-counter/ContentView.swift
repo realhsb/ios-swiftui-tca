@@ -59,7 +59,7 @@ func foo() -> Int {
 
 struct ContentView: View {
     
-    @ObservedObject var store: Store<AppState, CounterAction>
+    @ObservedObject var store: Store<AppState, AppAction>
     
     var body: some View {
         NavigationView {
@@ -67,15 +67,10 @@ struct ContentView: View {
                 NavigationLink(destination: CounterView(store: self.store)) {
                     Text("Counter Demo")
                 }
-            
                 NavigationLink(
-                    destination: FavoritePrimesView(
-                        favoritePrimes: self.$store.value.favoritePrimes,
-                        activityFeed: self.$store.value.activityFeed
-                    )
-                ) {
-                    Text("Favorite primes")
-                }
+                    "Favorite primes",
+                    destination: FavoritePrimesView(store: self.store)
+                     )
             }
             .navigationTitle("State management")
         }
@@ -225,6 +220,6 @@ extension AppState {
 }
 
 #Preview {
-    ContentView(store: Store(initialValue: AppState(), reducer: counterReducer))
+    ContentView(store: Store(initialValue: AppState(), reducer: appReducer))
 }
 

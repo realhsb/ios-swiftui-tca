@@ -35,12 +35,48 @@ enum CounterAction {
     case incrTapped
 }
 
-func counterReducer(state: inout AppState, action: CounterAction) {
+enum PrimeModalAction {
+    case saveFavoritePrimeTapped
+    case removeFavoritePrimeTapped
+}
+
+enum FavoritePrimesAction {
+    case deleteFavoritePrimes(IndexSet)
+}
+
+enum AppAction {
+    case counter(CounterAction)
+    case primeModal(PrimeModalAction)
+    case favoritePrimes(FavoritePrimesAction)
+}
+
+func appReducer(state: inout AppState, action: AppAction) {
     switch action {
-    case .decrTapped:
+    case .counter(.decrTapped):
         state.count -= 1
-    case .incrTapped:
+        
+    case .counter(.incrTapped):
         state.count += 1
+        
+    case .primeModal(.saveFavoritePrimeTapped):
+        state.favoritePrimes.removeAll(where: { $0 == state.count })
+        state.activityFeed.append(.init(timestamp: Date(), type: .removedFavoritePrime(state.count)))
+        
+    case .primeModal(.removeFavoritePrimeTapped):
+        state.favoritePrimes.append(state.count)
+        state.activityFeed.append(.init(timestamp: Date(), type: .addedFavoritePrime(state.count)))
+        
+    case let .favoritePrimes(.deleteFavoritePrimes(indexSet)):
+        for index in indexSet {
+            let prime = state.favoritePrimes[index]
+            state.favoritePrimes.remove(at: index)
+            state.activityFeed.append(
+                .init(
+                    timestamp: Date(),
+                    type: .removedFavoritePrime(prime)
+                )
+            )
+        }
     }
 }
 

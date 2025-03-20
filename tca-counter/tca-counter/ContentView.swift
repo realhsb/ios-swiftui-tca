@@ -93,7 +93,7 @@ private func ordinal(_ n: Int) -> String {
 
 struct CounterView: View {
     
-    @ObservedObject var store: Store<AppState, CounterAction>
+    @ObservedObject var store: Store<AppState, AppAction>
     @State var isPrimeModelShown: Bool = false
     @State var alertNthPrime: PrimeAlert?
     @State var isNthPrimeButtonDisabled = false
@@ -105,11 +105,11 @@ struct CounterView: View {
 
         VStack {
             HStack {
-                Button("-") { self.store.send(.decrTapped) }
+                Button("-") { self.store.send(.counter(.decrTapped)) }
                 
                 Text("\(self.store.value.count)")
                 
-                Button("+") { self.store.send(.incrTapped) }
+                Button("+") { self.store.send(.counter(.incrTapped)) }
             }
             
             Button  {
@@ -162,7 +162,7 @@ struct IsPrimeModalView: View {
         var favoritePrimes: [Int]
     }
     
-    @ObservedObject var store: Store<AppState, CounterAction>
+    @ObservedObject var store: Store<AppState, AppAction>
     
 //    @Binding var activityFeed: [AppState.Activity]
 //    @Binding let count: Int
@@ -174,16 +174,13 @@ struct IsPrimeModalView: View {
                 Text("\(self.store.value.count) is prime")
                 
                 if self.store.value.favoritePrimes.contains(self.store.value.count) {
-                    Button {
-                        self.removeFavoritePrime()
-                    } label: {
-                        Text("Remove from favorite primes")
+                    Button("Remove from favorite primes") {
+                        self.store.send(.primeModal(.removeFavoritePrimeTapped))
+                        
                     }
                 } else {
-                    Button {
-                        self.saveFavoritePrime()
-                    } label: {
-                        Text("Save to favorite primes")
+                    Button("Save to favorite primes") {
+                        self.store.send(.primeModal(.saveFavoritePrimeTapped))
                     }
                 }
             } else {

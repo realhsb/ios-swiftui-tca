@@ -8,25 +8,15 @@
 import SwiftUI
 
 struct FavoritePrimesView: View {
-    @Binding var favoritePrimes: [Int]
-    @Binding var activityFeed: [AppState.Activity]
+    @ObservedObject var store: Store<AppState, AppAction>
     
     var body: some View {
         List {
-            ForEach(self.favoritePrimes, id: \.self) { prime in
+            ForEach(self.store.value.favoritePrimes, id: \.self) { prime in
                     Text("\(prime)")
             }
-            .onDelete { IndexSet in
-                for index in IndexSet {
-                    let prime = self.favoritePrimes[index]
-                    self.favoritePrimes.remove(at: index)
-                    self.activityFeed.append(
-                        .init(
-                            timestamp: Date(),
-                            type: .removedFavoritePrime(prime)
-                        )
-                    )
-                }
+            .onDelete { indexSet in
+                self.store.send(.favoritePrimes(.deleteFavoritePrimes(indexSet)))
             }
         }
         .navigationBarTitle(Text("Favorite Primes"))
@@ -39,7 +29,7 @@ struct FavoritePrimesView: View {
     }
     
     func saveFavoritePrimes() {
-        let data = try! JSONEncoder().encode(self.favoritePrimes)
+        let data = try! JSONEncoder().encode(self.store.value.favoritePrimes)
         let documentsPath = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
         )[0]

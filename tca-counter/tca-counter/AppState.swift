@@ -117,22 +117,26 @@ func combine<Value, Action> (
 
 func pullback<LocalValue, GlobalValue, Action>(
     _ reducer: @escaping (inout LocalValue, Action) -> Void,
-    get: @escaping (GlobalValue) -> LocalValue,
-    set: @escaping (inout GlobalValue, LocalValue) -> Void
+    value: WritableKeyPath<GlobalValue, LocalValue>
+//    get: @escaping (GlobalValue) -> LocalValue,
+//    set: @escaping (inout GlobalValue, LocalValue) -> Void
 ) -> (inout GlobalValue, Action) -> Void {
     
     return { globalValue, action in
-        var localValue = get(globalValue)
-        reducer(&localValue, action)
-        set(&globalValue, localValue)
+        reducer(&globalValue[keyPath: value], action)
+//        var localValue = get(globalValue)
+//        reducer(&localValue, action)
+//        set(&globalValue, localValue)
     }
 }
 
-let appReducer = combine(
-    pullback(counterReducer, get: { $0.count }, set: { $0.count = $1 }),
+let _appReducer = combine(
+    pullback(counterReducer, value: \.count),
     primeModalReducer,
     favoritePrimesReducer
 )
+
+let appReducer = pullback(_appReducer, value: \.self)
 
 final class Store<Value, Action>: ObservableObject {
     let reducer: (inout Value, Action) -> Void

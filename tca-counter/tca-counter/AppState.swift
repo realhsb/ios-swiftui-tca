@@ -35,31 +35,26 @@ enum CounterAction {
     case incrTapped
 }
 
-func counterReducer(state: AppState, action: CounterAction) -> AppState {
-    var copy = state
+func counterReducer(state: inout AppState, action: CounterAction) {
     switch action {
     case .decrTapped:
-        copy.count -= 1
-//        return AppState(count: state.count - 1, favoritePrimes: state.favoritePrimes, loggedInUser: state.loggedInUser, activityFeed: state.activityFeed)
-        
+        state.count -= 1
     case .incrTapped:
-//        return AppState(count: state.count + 1, favoritePrimes: state.favoritePrimes, loggedInUser: state.loggedInUser, activityFeed: state.activityFeed)
-        copy.count += 1
+        state.count += 1
     }
-    return copy
 }
 
 final class Store<Value, Action>: ObservableObject {
-    let reducer: (Value, Action) -> Value
+    let reducer: (inout Value, Action) -> Void
     @Published var value : Value
     
-    init(initialValue: Value, reducer: @escaping (Value, Action) -> Value) {
+    init(initialValue: Value, reducer: @escaping (inout Value, Action) -> Void) {
         self.reducer = reducer
         self.value = initialValue
     }
     
     func send(_ action: Action) {
-        self.value = self.reducer(self.value, action)
+        self.reducer(&self.value, action)
     }
 }
 

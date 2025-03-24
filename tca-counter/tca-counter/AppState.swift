@@ -50,17 +50,15 @@ enum AppAction {
     case favoritePrimes(FavoritePrimesAction)
 }
 
+
 // state: inout AppState -> inout Int로 변경
-func counterReducer(state: inout Int, action: AppAction) {
+func counterReducer(state: inout Int, action: CounterAction) {
     switch action {
-    case .counter(.decrTapped):
+    case .decrTapped:
         state -= 1
         
-    case .counter(.incrTapped):
+    case .incrTapped:
         state += 1
-    
-    default:
-        break
     }
 }
 
@@ -148,6 +146,34 @@ extension AppState {
             self.activityFeed = newValue.activityFeed
         }
     }
+}
+
+// 액션 pullback을 위한 keypath 재정의 ( enum)
+struct _KeyPath<Root, Value> {
+    let get: (Root) -> Value                // Root로 부터 Value 추출
+    let set: (inout Root, Value) -> Void    // Value를 통해 Root 값 직접 설정 (inout 활용)
+}
+
+/// Enum의 연산자
+///
+/// 1) setter와 유사 (값 넣기)
+/// AppAction.counter(CounterAction.incrTapped)
+///
+/// 2) getter와 유사 (값 추출)
+/// let action = AppAction.favoritePrimes(.deleteFavoritePrimes([1]))
+/// let favoritePrimes: FavoritePrimesAction?
+/// switch action {
+/// case let .favoritePrimes(action):
+///     favoritePrimes = action
+/// default:
+///     favoritePrimes = nil
+/// }
+
+
+// Enum을 위한 KeyPath가 있다면 이런 형식일 것이다.
+struct EnumKeyPath<Root, Value> {
+    let embed: (Value) -> Root
+    let extract: (Root) -> Value?
 }
 
 let _appReducer = combine(

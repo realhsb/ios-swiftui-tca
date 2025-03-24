@@ -151,19 +151,19 @@ func combine<Value, Action> (
     }
 }
 
-func pullback<LocalValue, GlobalValue, Action>(
-    _ reducer: @escaping (inout LocalValue, Action) -> Void,
-    value: WritableKeyPath<GlobalValue, LocalValue>
-//    get: @escaping (GlobalValue) -> LocalValue,
-//    set: @escaping (inout GlobalValue, LocalValue) -> Void
-) -> (inout GlobalValue, Action) -> Void {
-    
-    return { globalValue, action in
-        reducer(&globalValue[keyPath: value], action)
-//        var localValue = get(globalValue)
-//        reducer(&localValue, action)
-//        set(&globalValue, localValue)
-    }
+
+func pullback<GlobalValue, LocalValue, GlobalAction, LocalAction>(
+  _ reducer: @escaping (inout LocalValue, LocalAction) -> Void,
+  value: WritableKeyPath<GlobalValue, LocalValue>,
+  action: WritableKeyPath<GlobalAction, LocalAction?>
+) -> (inout GlobalValue, GlobalAction) -> Void {
+
+  return { globalValue, globalAction in
+    guard let localAction = globalAction[keyPath: action]
+    else { return }
+
+    reducer(&globalValue[keyPath: value], localAction)
+  }
 }
 
 extension AppState {
@@ -210,12 +210,12 @@ struct EnumKeyPath<Root, Value> {
 }
 
 let _appReducer = combine(
-//    pullback(counterReducer, value: \.count),
+    pullback(counterReducer, value: \.count, action: \.counter),
     primeModalReducer,
-    pullback(favoritePrimesReducer, value: \.favoritePrimesState)
+    pullback(favoritePrimesReducer, value: \.favoritePrimesState, action: \.self)
 )
 
-let appReducer = pullback(_appReducer, value: \.self)
+let appReducer = pullback(_appReducer, value: \.self, action: \.self)
 
 final class Store<Value, Action>: ObservableObject {
     let reducer: (inout Value, Action) -> Void

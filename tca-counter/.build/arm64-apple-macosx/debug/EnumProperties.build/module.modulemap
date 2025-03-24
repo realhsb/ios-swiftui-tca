@@ -1,0 +1,4 @@
+module EnumProperties {
+    header "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/EnumProperties-Swift.h"
+    requires objc
+}

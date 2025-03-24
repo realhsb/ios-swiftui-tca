@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/master.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-enum-properties/Sources/EnumProperties/EnumPropertyRewriter.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/EnumPropertyRewriter.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/EnumPropertyRewriter.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/EnumPropertyRewriter~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/EnumPropertyRewriter.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-enum-properties/Sources/EnumProperties/MakeEnumProperty.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/MakeEnumProperty.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/MakeEnumProperty.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/MakeEnumProperty~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/EnumProperties.build/MakeEnumProperty.swiftdeps"
+  }
+}

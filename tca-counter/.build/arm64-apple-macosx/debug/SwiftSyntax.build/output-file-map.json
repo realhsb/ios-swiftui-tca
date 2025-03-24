@@ -1,0 +1,161 @@
+{
+  "": {
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/master.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/AbsolutePosition.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/AbsolutePosition.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/AbsolutePosition.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/AbsolutePosition~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/AbsolutePosition.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/ByteTreeDeserialization.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/ByteTreeDeserialization.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/ByteTreeDeserialization.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/ByteTreeDeserialization~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/ByteTreeDeserialization.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/Diagnostic.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Diagnostic.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Diagnostic.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Diagnostic~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Diagnostic.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/DiagnosticConsumer.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/DiagnosticConsumer.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/DiagnosticConsumer.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/DiagnosticConsumer~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/DiagnosticConsumer.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/DiagnosticEngine.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/DiagnosticEngine.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/DiagnosticEngine.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/DiagnosticEngine~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/DiagnosticEngine.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/JSONDiagnosticConsumer.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/JSONDiagnosticConsumer.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/JSONDiagnosticConsumer.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/JSONDiagnosticConsumer~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/JSONDiagnosticConsumer.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/LazyNonThreadSafeCache.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/LazyNonThreadSafeCache.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/LazyNonThreadSafeCache.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/LazyNonThreadSafeCache~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/LazyNonThreadSafeCache.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/PrintingDiagnosticConsumer.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/PrintingDiagnosticConsumer.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/PrintingDiagnosticConsumer.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/PrintingDiagnosticConsumer~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/PrintingDiagnosticConsumer.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/RawSyntax.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/RawSyntax.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/RawSyntax.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/RawSyntax~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/RawSyntax.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/SourceLength.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SourceLength.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SourceLength.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SourceLength~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SourceLength.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/SourcePresence.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SourcePresence.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SourcePresence.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SourcePresence~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SourcePresence.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/SwiftSyntax.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SwiftSyntax.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SwiftSyntax.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SwiftSyntax~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SwiftSyntax.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/SwiftcInvocation.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SwiftcInvocation.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SwiftcInvocation.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SwiftcInvocation~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SwiftcInvocation.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/Syntax.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Syntax.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Syntax.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Syntax~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Syntax.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/SyntaxChildren.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxChildren.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxChildren.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxChildren~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxChildren.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/SyntaxData.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxData.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxData.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxData~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxData.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/WeakLookupTable.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/WeakLookupTable.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/WeakLookupTable.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/WeakLookupTable~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/WeakLookupTable.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/SyntaxBuilders.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxBuilders.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxBuilders.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxBuilders~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxBuilders.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/SyntaxClassifier.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxClassifier.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxClassifier.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxClassifier~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxClassifier.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/SyntaxCollections.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxCollections.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxCollections.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxCollections~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxCollections.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/SyntaxFactory.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxFactory.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxFactory.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxFactory~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxFactory.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/SyntaxKind.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxKind.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxKind.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxKind~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxKind.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/SyntaxNodes.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxNodes.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxNodes.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxNodes~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxNodes.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/SyntaxRewriter.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxRewriter.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxRewriter.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxRewriter~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/SyntaxRewriter.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/TokenKind.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/TokenKind.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/TokenKind.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/TokenKind~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/TokenKind.swiftdeps"
+  },
+  "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/checkouts/swift-syntax/Sources/SwiftSyntax/gyb_generated/Trivia.swift": {
+    "dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Trivia.d",
+    "object": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Trivia.swift.o",
+    "swiftmodule": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Trivia~partial.swiftmodule",
+    "swift-dependencies": "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SwiftSyntax.build/Trivia.swiftdeps"
+  }
+}

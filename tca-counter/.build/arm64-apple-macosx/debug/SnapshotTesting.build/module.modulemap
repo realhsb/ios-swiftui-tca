@@ -1,0 +1,4 @@
+module SnapshotTesting {
+    header "/Users/soop/Documents/git/ios-swiftui-tca/tca-counter/.build/arm64-apple-macosx/debug/SnapshotTesting.build/SnapshotTesting-Swift.h"
+    requires objc
+}

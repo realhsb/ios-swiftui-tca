@@ -220,6 +220,6 @@ extension AppState {
 }
 
 #Preview {
-    ContentView(store: Store(initialValue: AppState(), reducer: activityFeed(appReducer)))
+    ContentView(store: Store(initialValue: AppState(), reducer: logging(activityFeed(appReducer))))
 }
 

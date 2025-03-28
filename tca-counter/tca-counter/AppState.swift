@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct AppState {
     var count: Int = 0
@@ -255,6 +256,18 @@ let _appReducer: (inout AppState, AppAction) -> Void = combine(
 
 let appReducer = pullback(_appReducer, value: \.self, action: \.self)
 
+func logging<Value, Action>(
+    _ reducer: @escaping (inout Value, Action) -> Void
+) -> (inout Value, Action) -> Void {
+    return { value, action in
+        reducer(&value, action)
+        print("Action: \(action)")
+        print("Value:")
+        dump(value)
+        print("---")
+    }
+}
+
 final class Store<Value, Action>: ObservableObject {
     let reducer: (inout Value, Action) -> Void
     @Published var value : Value
@@ -266,6 +279,10 @@ final class Store<Value, Action>: ObservableObject {
     
     func send(_ action: Action) {
         self.reducer(&self.value, action)
+//        print("Action: \(action)")
+//        print("Value:")
+//        dump(self.value)
+//        print("---")
     }
 }
 

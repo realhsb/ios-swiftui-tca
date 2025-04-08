@@ -6,7 +6,106 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6C6380BE2DA564AF004B240F /* Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380B42DA564AE004B240F /* Counter.framework */; };
+		6C6380C92DA564AF004B240F /* Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380B42DA564AE004B240F /* Counter.framework */; };
+		6C6380CA2DA564AF004B240F /* Counter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380B42DA564AE004B240F /* Counter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C6380E22DA564CD004B240F /* PrimeModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380D82DA564CC004B240F /* PrimeModal.framework */; };
+		6C6380ED2DA564CD004B240F /* PrimeModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380D82DA564CC004B240F /* PrimeModal.framework */; };
+		6C6380EE2DA564CD004B240F /* PrimeModal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380D82DA564CC004B240F /* PrimeModal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C6381052DA564DC004B240F /* FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380FB2DA564DC004B240F /* FavoritePrimes.framework */; };
+		6C6381102DA564DC004B240F /* FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380FB2DA564DC004B240F /* FavoritePrimes.framework */; };
+		6C6381112DA564DC004B240F /* FavoritePrimes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6380FB2DA564DC004B240F /* FavoritePrimes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C6381282DA56502004B240F /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C63811E2DA56502004B240F /* ComposableArchitecture.framework */; };
+		6C6381332DA56502004B240F /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C63811E2DA56502004B240F /* ComposableArchitecture.framework */; };
+		6C6381342DA56502004B240F /* ComposableArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C63811E2DA56502004B240F /* ComposableArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		6C6380BF2DA564AF004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C6380B32DA564AE004B240F;
+			remoteInfo = Counter;
+		};
+		6C6380C12DA564AF004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CE3ABC92D633236005C2AF0;
+			remoteInfo = "tca-counter";
+		};
+		6C6380C72DA564AF004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C6380B32DA564AE004B240F;
+			remoteInfo = Counter;
+		};
+		6C6380E32DA564CD004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C6380D72DA564CC004B240F;
+			remoteInfo = PrimeModal;
+		};
+		6C6380E52DA564CD004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CE3ABC92D633236005C2AF0;
+			remoteInfo = "tca-counter";
+		};
+		6C6380EB2DA564CD004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C6380D72DA564CC004B240F;
+			remoteInfo = PrimeModal;
+		};
+		6C6381062DA564DC004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C6380FA2DA564DC004B240F;
+			remoteInfo = FavoritePrimes;
+		};
+		6C6381082DA564DC004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CE3ABC92D633236005C2AF0;
+			remoteInfo = "tca-counter";
+		};
+		6C63810E2DA564DC004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C6380FA2DA564DC004B240F;
+			remoteInfo = FavoritePrimes;
+		};
+		6C6381292DA56502004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C63811D2DA56502004B240F;
+			remoteInfo = ComposableArchitecture;
+		};
+		6C63812B2DA56502004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CE3ABC92D633236005C2AF0;
+			remoteInfo = "tca-counter";
+		};
+		6C6381312DA56502004B240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C63811D2DA56502004B240F;
+			remoteInfo = ComposableArchitecture;
+		};
 		6CFE5A9E2D828EC100E53292 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6CE3ABC22D633236005C2AF0 /* Project object */;
@@ -16,12 +115,120 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6C6380CB2DA564AF004B240F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6C6381342DA56502004B240F /* ComposableArchitecture.framework in Embed Frameworks */,
+				6C6380EE2DA564CD004B240F /* PrimeModal.framework in Embed Frameworks */,
+				6C6380CA2DA564AF004B240F /* Counter.framework in Embed Frameworks */,
+				6C6381112DA564DC004B240F /* FavoritePrimes.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6C6380B42DA564AE004B240F /* Counter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Counter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6380BD2DA564AF004B240F /* CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6380D82DA564CC004B240F /* PrimeModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6380E12DA564CD004B240F /* PrimeModalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimeModalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6380FB2DA564DC004B240F /* FavoritePrimes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FavoritePrimes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6381042DA564DC004B240F /* FavoritePrimesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FavoritePrimesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C63811E2DA56502004B240F /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C6381272DA56502004B240F /* ComposableArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposableArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE3ABCA2D633236005C2AF0 /* tca-counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tca-counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFE5A9A2D828EC100E53292 /* tca-counterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tca-counterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6C6380D02DA564AF004B240F /* Exceptions for "Counter" folder in "Counter" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				Counter.h,
+			);
+			target = 6C6380B32DA564AE004B240F /* Counter */;
+		};
+		6C6380EF2DA564CD004B240F /* Exceptions for "PrimeModal" folder in "PrimeModal" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				PrimeModal.h,
+			);
+			target = 6C6380D72DA564CC004B240F /* PrimeModal */;
+		};
+		6C6381122DA564DC004B240F /* Exceptions for "FavoritePrimes" folder in "FavoritePrimes" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				FavoritePrimes.h,
+			);
+			target = 6C6380FA2DA564DC004B240F /* FavoritePrimes */;
+		};
+		6C6381352DA56502004B240F /* Exceptions for "ComposableArchitecture" folder in "ComposableArchitecture" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				ComposableArchitecture.h,
+			);
+			target = 6C63811D2DA56502004B240F /* ComposableArchitecture */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		6C6380B52DA564AE004B240F /* Counter */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6C6380D02DA564AF004B240F /* Exceptions for "Counter" folder in "Counter" target */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		6C6380C32DA564AF004B240F /* CounterTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CounterTests;
+			sourceTree = "<group>";
+		};
+		6C6380D92DA564CC004B240F /* PrimeModal */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6C6380EF2DA564CD004B240F /* Exceptions for "PrimeModal" folder in "PrimeModal" target */,
+			);
+			path = PrimeModal;
+			sourceTree = "<group>";
+		};
+		6C6380E72DA564CD004B240F /* PrimeModalTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PrimeModalTests;
+			sourceTree = "<group>";
+		};
+		6C6380FC2DA564DC004B240F /* FavoritePrimes */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6C6381122DA564DC004B240F /* Exceptions for "FavoritePrimes" folder in "FavoritePrimes" target */,
+			);
+			path = FavoritePrimes;
+			sourceTree = "<group>";
+		};
+		6C63810A2DA564DC004B240F /* FavoritePrimesTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FavoritePrimesTests;
+			sourceTree = "<group>";
+		};
+		6C63811F2DA56502004B240F /* ComposableArchitecture */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6C6381352DA56502004B240F /* Exceptions for "ComposableArchitecture" folder in "ComposableArchitecture" target */,
+			);
+			path = ComposableArchitecture;
+			sourceTree = "<group>";
+		};
+		6C63812D2DA56502004B240F /* ComposableArchitectureTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ComposableArchitectureTests;
+			sourceTree = "<group>";
+		};
 		6CE3ABCC2D633236005C2AF0 /* tca-counter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "tca-counter";
@@ -35,10 +242,74 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6C6380B12DA564AE004B240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380BA2DA564AF004B240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C6380BE2DA564AF004B240F /* Counter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380D52DA564CC004B240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380DE2DA564CD004B240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C6380E22DA564CD004B240F /* PrimeModal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380F82DA564DC004B240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6381012DA564DC004B240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C6381052DA564DC004B240F /* FavoritePrimes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C63811B2DA56502004B240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6381242DA56502004B240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C6381282DA56502004B240F /* ComposableArchitecture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6CE3ABC72D633236005C2AF0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6381332DA56502004B240F /* ComposableArchitecture.framework in Frameworks */,
+				6C6380ED2DA564CD004B240F /* PrimeModal.framework in Frameworks */,
+				6C6380C92DA564AF004B240F /* Counter.framework in Frameworks */,
+				6C6381102DA564DC004B240F /* FavoritePrimes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +328,14 @@
 			children = (
 				6CE3ABCC2D633236005C2AF0 /* tca-counter */,
 				6CFE5A9B2D828EC100E53292 /* tca-counterTests */,
+				6C6380B52DA564AE004B240F /* Counter */,
+				6C6380C32DA564AF004B240F /* CounterTests */,
+				6C6380D92DA564CC004B240F /* PrimeModal */,
+				6C6380E72DA564CD004B240F /* PrimeModalTests */,
+				6C6380FC2DA564DC004B240F /* FavoritePrimes */,
+				6C63810A2DA564DC004B240F /* FavoritePrimesTests */,
+				6C63811F2DA56502004B240F /* ComposableArchitecture */,
+				6C63812D2DA56502004B240F /* ComposableArchitectureTests */,
 				6CE3ABCB2D633236005C2AF0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,13 +345,240 @@
 			children = (
 				6CE3ABCA2D633236005C2AF0 /* tca-counter.app */,
 				6CFE5A9A2D828EC100E53292 /* tca-counterTests.xctest */,
+				6C6380B42DA564AE004B240F /* Counter.framework */,
+				6C6380BD2DA564AF004B240F /* CounterTests.xctest */,
+				6C6380D82DA564CC004B240F /* PrimeModal.framework */,
+				6C6380E12DA564CD004B240F /* PrimeModalTests.xctest */,
+				6C6380FB2DA564DC004B240F /* FavoritePrimes.framework */,
+				6C6381042DA564DC004B240F /* FavoritePrimesTests.xctest */,
+				6C63811E2DA56502004B240F /* ComposableArchitecture.framework */,
+				6C6381272DA56502004B240F /* ComposableArchitectureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		6C6380AF2DA564AE004B240F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380D32DA564CC004B240F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380F62DA564DC004B240F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6381192DA56502004B240F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		6C6380B32DA564AE004B240F /* Counter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C6380D12DA564AF004B240F /* Build configuration list for PBXNativeTarget "Counter" */;
+			buildPhases = (
+				6C6380AF2DA564AE004B240F /* Headers */,
+				6C6380B02DA564AE004B240F /* Sources */,
+				6C6380B12DA564AE004B240F /* Frameworks */,
+				6C6380B22DA564AE004B240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6C6380B52DA564AE004B240F /* Counter */,
+			);
+			name = Counter;
+			packageProductDependencies = (
+			);
+			productName = Counter;
+			productReference = 6C6380B42DA564AE004B240F /* Counter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C6380BC2DA564AF004B240F /* CounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C6380D22DA564AF004B240F /* Build configuration list for PBXNativeTarget "CounterTests" */;
+			buildPhases = (
+				6C6380B92DA564AF004B240F /* Sources */,
+				6C6380BA2DA564AF004B240F /* Frameworks */,
+				6C6380BB2DA564AF004B240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C6380C02DA564AF004B240F /* PBXTargetDependency */,
+				6C6380C22DA564AF004B240F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6C6380C32DA564AF004B240F /* CounterTests */,
+			);
+			name = CounterTests;
+			packageProductDependencies = (
+			);
+			productName = CounterTests;
+			productReference = 6C6380BD2DA564AF004B240F /* CounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6C6380D72DA564CC004B240F /* PrimeModal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C6380F02DA564CD004B240F /* Build configuration list for PBXNativeTarget "PrimeModal" */;
+			buildPhases = (
+				6C6380D32DA564CC004B240F /* Headers */,
+				6C6380D42DA564CC004B240F /* Sources */,
+				6C6380D52DA564CC004B240F /* Frameworks */,
+				6C6380D62DA564CC004B240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6C6380D92DA564CC004B240F /* PrimeModal */,
+			);
+			name = PrimeModal;
+			packageProductDependencies = (
+			);
+			productName = PrimeModal;
+			productReference = 6C6380D82DA564CC004B240F /* PrimeModal.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C6380E02DA564CD004B240F /* PrimeModalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C6380F32DA564CD004B240F /* Build configuration list for PBXNativeTarget "PrimeModalTests" */;
+			buildPhases = (
+				6C6380DD2DA564CD004B240F /* Sources */,
+				6C6380DE2DA564CD004B240F /* Frameworks */,
+				6C6380DF2DA564CD004B240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C6380E42DA564CD004B240F /* PBXTargetDependency */,
+				6C6380E62DA564CD004B240F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6C6380E72DA564CD004B240F /* PrimeModalTests */,
+			);
+			name = PrimeModalTests;
+			packageProductDependencies = (
+			);
+			productName = PrimeModalTests;
+			productReference = 6C6380E12DA564CD004B240F /* PrimeModalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6C6380FA2DA564DC004B240F /* FavoritePrimes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C6381132DA564DC004B240F /* Build configuration list for PBXNativeTarget "FavoritePrimes" */;
+			buildPhases = (
+				6C6380F62DA564DC004B240F /* Headers */,
+				6C6380F72DA564DC004B240F /* Sources */,
+				6C6380F82DA564DC004B240F /* Frameworks */,
+				6C6380F92DA564DC004B240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6C6380FC2DA564DC004B240F /* FavoritePrimes */,
+			);
+			name = FavoritePrimes;
+			packageProductDependencies = (
+			);
+			productName = FavoritePrimes;
+			productReference = 6C6380FB2DA564DC004B240F /* FavoritePrimes.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C6381032DA564DC004B240F /* FavoritePrimesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C6381162DA564DC004B240F /* Build configuration list for PBXNativeTarget "FavoritePrimesTests" */;
+			buildPhases = (
+				6C6381002DA564DC004B240F /* Sources */,
+				6C6381012DA564DC004B240F /* Frameworks */,
+				6C6381022DA564DC004B240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C6381072DA564DC004B240F /* PBXTargetDependency */,
+				6C6381092DA564DC004B240F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6C63810A2DA564DC004B240F /* FavoritePrimesTests */,
+			);
+			name = FavoritePrimesTests;
+			packageProductDependencies = (
+			);
+			productName = FavoritePrimesTests;
+			productReference = 6C6381042DA564DC004B240F /* FavoritePrimesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6C63811D2DA56502004B240F /* ComposableArchitecture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C6381362DA56502004B240F /* Build configuration list for PBXNativeTarget "ComposableArchitecture" */;
+			buildPhases = (
+				6C6381192DA56502004B240F /* Headers */,
+				6C63811A2DA56502004B240F /* Sources */,
+				6C63811B2DA56502004B240F /* Frameworks */,
+				6C63811C2DA56502004B240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6C63811F2DA56502004B240F /* ComposableArchitecture */,
+			);
+			name = ComposableArchitecture;
+			packageProductDependencies = (
+			);
+			productName = ComposableArchitecture;
+			productReference = 6C63811E2DA56502004B240F /* ComposableArchitecture.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C6381262DA56502004B240F /* ComposableArchitectureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C6381392DA56502004B240F /* Build configuration list for PBXNativeTarget "ComposableArchitectureTests" */;
+			buildPhases = (
+				6C6381232DA56502004B240F /* Sources */,
+				6C6381242DA56502004B240F /* Frameworks */,
+				6C6381252DA56502004B240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C63812A2DA56502004B240F /* PBXTargetDependency */,
+				6C63812C2DA56502004B240F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6C63812D2DA56502004B240F /* ComposableArchitectureTests */,
+			);
+			name = ComposableArchitectureTests;
+			packageProductDependencies = (
+			);
+			productName = ComposableArchitectureTests;
+			productReference = 6C6381272DA56502004B240F /* ComposableArchitectureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6CE3ABC92D633236005C2AF0 /* tca-counter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CE3ABD82D633238005C2AF0 /* Build configuration list for PBXNativeTarget "tca-counter" */;
@@ -80,10 +586,15 @@
 				6CE3ABC62D633236005C2AF0 /* Sources */,
 				6CE3ABC72D633236005C2AF0 /* Frameworks */,
 				6CE3ABC82D633236005C2AF0 /* Resources */,
+				6C6380CB2DA564AF004B240F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6C6380C82DA564AF004B240F /* PBXTargetDependency */,
+				6C6380EC2DA564CD004B240F /* PBXTargetDependency */,
+				6C63810F2DA564DC004B240F /* PBXTargetDependency */,
+				6C6381322DA56502004B240F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				6CE3ABCC2D633236005C2AF0 /* tca-counter */,
@@ -128,6 +639,34 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					6C6380B32DA564AE004B240F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					6C6380BC2DA564AF004B240F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 6CE3ABC92D633236005C2AF0;
+					};
+					6C6380D72DA564CC004B240F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					6C6380E02DA564CD004B240F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 6CE3ABC92D633236005C2AF0;
+					};
+					6C6380FA2DA564DC004B240F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					6C6381032DA564DC004B240F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 6CE3ABC92D633236005C2AF0;
+					};
+					6C63811D2DA56502004B240F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					6C6381262DA56502004B240F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 6CE3ABC92D633236005C2AF0;
+					};
 					6CE3ABC92D633236005C2AF0 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -153,11 +692,75 @@
 			targets = (
 				6CE3ABC92D633236005C2AF0 /* tca-counter */,
 				6CFE5A992D828EC100E53292 /* tca-counterTests */,
+				6C6380B32DA564AE004B240F /* Counter */,
+				6C6380BC2DA564AF004B240F /* CounterTests */,
+				6C6380D72DA564CC004B240F /* PrimeModal */,
+				6C6380E02DA564CD004B240F /* PrimeModalTests */,
+				6C6380FA2DA564DC004B240F /* FavoritePrimes */,
+				6C6381032DA564DC004B240F /* FavoritePrimesTests */,
+				6C63811D2DA56502004B240F /* ComposableArchitecture */,
+				6C6381262DA56502004B240F /* ComposableArchitectureTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6C6380B22DA564AE004B240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380BB2DA564AF004B240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380D62DA564CC004B240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380DF2DA564CD004B240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380F92DA564DC004B240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6381022DA564DC004B240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C63811C2DA56502004B240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6381252DA56502004B240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6CE3ABC82D633236005C2AF0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +778,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6C6380B02DA564AE004B240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380B92DA564AF004B240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380D42DA564CC004B240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380DD2DA564CD004B240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6380F72DA564DC004B240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6381002DA564DC004B240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C63811A2DA56502004B240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C6381232DA56502004B240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6CE3ABC62D633236005C2AF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,6 +851,66 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6C6380C02DA564AF004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C6380B32DA564AE004B240F /* Counter */;
+			targetProxy = 6C6380BF2DA564AF004B240F /* PBXContainerItemProxy */;
+		};
+		6C6380C22DA564AF004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CE3ABC92D633236005C2AF0 /* tca-counter */;
+			targetProxy = 6C6380C12DA564AF004B240F /* PBXContainerItemProxy */;
+		};
+		6C6380C82DA564AF004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C6380B32DA564AE004B240F /* Counter */;
+			targetProxy = 6C6380C72DA564AF004B240F /* PBXContainerItemProxy */;
+		};
+		6C6380E42DA564CD004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C6380D72DA564CC004B240F /* PrimeModal */;
+			targetProxy = 6C6380E32DA564CD004B240F /* PBXContainerItemProxy */;
+		};
+		6C6380E62DA564CD004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CE3ABC92D633236005C2AF0 /* tca-counter */;
+			targetProxy = 6C6380E52DA564CD004B240F /* PBXContainerItemProxy */;
+		};
+		6C6380EC2DA564CD004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C6380D72DA564CC004B240F /* PrimeModal */;
+			targetProxy = 6C6380EB2DA564CD004B240F /* PBXContainerItemProxy */;
+		};
+		6C6381072DA564DC004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C6380FA2DA564DC004B240F /* FavoritePrimes */;
+			targetProxy = 6C6381062DA564DC004B240F /* PBXContainerItemProxy */;
+		};
+		6C6381092DA564DC004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CE3ABC92D633236005C2AF0 /* tca-counter */;
+			targetProxy = 6C6381082DA564DC004B240F /* PBXContainerItemProxy */;
+		};
+		6C63810F2DA564DC004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C6380FA2DA564DC004B240F /* FavoritePrimes */;
+			targetProxy = 6C63810E2DA564DC004B240F /* PBXContainerItemProxy */;
+		};
+		6C63812A2DA56502004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C63811D2DA56502004B240F /* ComposableArchitecture */;
+			targetProxy = 6C6381292DA56502004B240F /* PBXContainerItemProxy */;
+		};
+		6C63812C2DA56502004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CE3ABC92D633236005C2AF0 /* tca-counter */;
+			targetProxy = 6C63812B2DA56502004B240F /* PBXContainerItemProxy */;
+		};
+		6C6381322DA56502004B240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C63811D2DA56502004B240F /* ComposableArchitecture */;
+			targetProxy = 6C6381312DA56502004B240F /* PBXContainerItemProxy */;
+		};
 		6CFE5A9F2D828EC100E53292 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6CE3ABC92D633236005C2AF0 /* tca-counter */;
@@ -200,6 +919,414 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6C6380CC2DA564AF004B240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = soop.Counter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C6380CD2DA564AF004B240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = soop.Counter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C6380CE2DA564AF004B240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4YH4UGRTMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soop.CounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tca-counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tca-counter";
+			};
+			name = Debug;
+		};
+		6C6380CF2DA564AF004B240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4YH4UGRTMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soop.CounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tca-counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tca-counter";
+			};
+			name = Release;
+		};
+		6C6380F12DA564CD004B240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = soop.PrimeModal;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C6380F22DA564CD004B240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = soop.PrimeModal;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C6380F42DA564CD004B240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4YH4UGRTMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soop.PrimeModalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tca-counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tca-counter";
+			};
+			name = Debug;
+		};
+		6C6380F52DA564CD004B240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4YH4UGRTMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soop.PrimeModalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tca-counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tca-counter";
+			};
+			name = Release;
+		};
+		6C6381142DA564DC004B240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = soop.FavoritePrimes;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C6381152DA564DC004B240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = soop.FavoritePrimes;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C6381172DA564DC004B240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4YH4UGRTMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soop.FavoritePrimesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tca-counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tca-counter";
+			};
+			name = Debug;
+		};
+		6C6381182DA564DC004B240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4YH4UGRTMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soop.FavoritePrimesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tca-counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tca-counter";
+			};
+			name = Release;
+		};
+		6C6381372DA56502004B240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = soop.ComposableArchitecture;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C6381382DA56502004B240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = soop.ComposableArchitecture;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C63813A2DA56502004B240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4YH4UGRTMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soop.ComposableArchitectureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tca-counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tca-counter";
+			};
+			name = Debug;
+		};
+		6C63813B2DA56502004B240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4YH4UGRTMH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soop.ComposableArchitectureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tca-counter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tca-counter";
+			};
+			name = Release;
+		};
 		6CE3ABD62D633238005C2AF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -422,6 +1549,78 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6C6380D12DA564AF004B240F /* Build configuration list for PBXNativeTarget "Counter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C6380CC2DA564AF004B240F /* Debug */,
+				6C6380CD2DA564AF004B240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C6380D22DA564AF004B240F /* Build configuration list for PBXNativeTarget "CounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C6380CE2DA564AF004B240F /* Debug */,
+				6C6380CF2DA564AF004B240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C6380F02DA564CD004B240F /* Build configuration list for PBXNativeTarget "PrimeModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C6380F12DA564CD004B240F /* Debug */,
+				6C6380F22DA564CD004B240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C6380F32DA564CD004B240F /* Build configuration list for PBXNativeTarget "PrimeModalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C6380F42DA564CD004B240F /* Debug */,
+				6C6380F52DA564CD004B240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C6381132DA564DC004B240F /* Build configuration list for PBXNativeTarget "FavoritePrimes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C6381142DA564DC004B240F /* Debug */,
+				6C6381152DA564DC004B240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C6381162DA564DC004B240F /* Build configuration list for PBXNativeTarget "FavoritePrimesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C6381172DA564DC004B240F /* Debug */,
+				6C6381182DA564DC004B240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C6381362DA56502004B240F /* Build configuration list for PBXNativeTarget "ComposableArchitecture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C6381372DA56502004B240F /* Debug */,
+				6C6381382DA56502004B240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C6381392DA56502004B240F /* Build configuration list for PBXNativeTarget "ComposableArchitectureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C63813A2DA56502004B240F /* Debug */,
+				6C63813B2DA56502004B240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6CE3ABC52D633236005C2AF0 /* Build configuration list for PBXProject "tca-counter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

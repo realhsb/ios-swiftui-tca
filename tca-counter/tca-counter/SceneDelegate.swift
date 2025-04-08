@@ -1,0 +1,8 @@
+//
+//  SceneDelegate.swift
+//  tca-counter
+//
+//  Created by Soop on 4/8/25.
+//
+
+import Foundation

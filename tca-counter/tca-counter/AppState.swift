@@ -1,9 +1,15 @@
 import Foundation
 import SwiftUI
+import ComposableArchitecture
+import FavoritePrimes
+import Combine
+import Counter
+import PrimeModal
 
 struct AppState {
     var count: Int = 0
     var favoritePrimes: [Int] = []
+//    var primeModal: PrimeModalState
     var loggedInUser: User?
     var activityFeed: [Activity] = []
 
@@ -24,19 +30,6 @@ struct AppState {
   }
 }
 
-enum CounterAction {
-    case decrTapped
-    case incrTapped
-}
-
-enum PrimeModalAction {
-    case saveFavoritePrimeTapped
-    case removeFavoritePrimeTapped
-}
-
-enum FavoritePrimesAction {
-    case deleteFavoritePrimes(IndexSet)
-}
 
 enum AppAction {
     case counter(CounterAction)
@@ -77,42 +70,6 @@ enum AppAction {
       }
 }
 
-
-// state: inout AppState -> inout Int로 변경
-func counterReducer(state: inout Int, action: CounterAction) {
-    switch action {
-    case .decrTapped:
-        state -= 1
-        
-    case .incrTapped:
-        state += 1
-    }
-}
-
-func primeModalReducer(
-    state: inout AppState,
-    action: PrimeModalAction
-) -> Void {
-    switch action {
-    case .removeFavoritePrimeTapped:
-        state.favoritePrimes.removeAll(where: { $0 == state.count })
-
-        
-    case .saveFavoritePrimeTapped:
-        state.favoritePrimes.append(state.count)
-
-    }
-}
-
-func favoritePrimesReducer(state: inout [Int], action: FavoritePrimesAction) {
-    switch action {
-        case let .deleteFavoritePrimes(indexSet):
-            for index in indexSet {
-                state.remove(at: index)
-        }
-    }
-}
-
 func activityFeed(
     _ reducer: @escaping (inout AppState, AppAction) -> Void
 ) -> (inout AppState, AppAction) -> Void {
@@ -147,32 +104,9 @@ func activityFeed(
     }
 }
 
-// 큰 리듀서를 작은 리듀서로
-func combine<Value, Action> (
-    _ reducers: (inout Value, Action) -> Void...
-) -> (inout Value, Action) -> Void {
-    
-    return { value, action in
-        for reducers in reducers {
-            reducers(&value, action)
-        }
-    }
-}
 
 
-func pullback<GlobalValue, LocalValue, GlobalAction, LocalAction>(
-  _ reducer: @escaping (inout LocalValue, LocalAction) -> Void,
-  value: WritableKeyPath<GlobalValue, LocalValue>,
-  action: WritableKeyPath<GlobalAction, LocalAction?>
-) -> (inout GlobalValue, GlobalAction) -> Void {
 
-  return { globalValue, globalAction in
-    guard let localAction = globalAction[keyPath: action]
-    else { return }
-
-    reducer(&globalValue[keyPath: value], localAction)
-  }
-}
 
 // 액션 pullback을 위한 keypath 재정의 ( enum)
 struct _KeyPath<Root, Value> {
@@ -213,9 +147,24 @@ func higherOrderReducer(
     }
 }
 
-let _appReducer: (inout AppState, AppAction) -> Void = combine(
+extension AppState {
+    var primeModal: PrimeModalState {
+        get {
+            PrimeModalState(
+                count: self.count,
+                favoritePrimes: self.favoritePrimes
+            )
+        }
+        set {
+            self.count = newValue.count
+            self.favoritePrimes = newValue.favoritePrimes
+        }
+    }
+}
+
+let appReducer: (inout AppState, AppAction) -> Void = combine(
     pullback(counterReducer, value: \.count, action: \.counter),
-    pullback(primeModalReducer, value: \.self, action: \.primeModal),
+    pullback(primeModalReducer, value: \.primeModal, action: \.primeModal),
     pullback(
         favoritePrimesReducer,
         value: \.favoritePrimes,
@@ -223,33 +172,11 @@ let _appReducer: (inout AppState, AppAction) -> Void = combine(
     )
 )
 
-let appReducer = pullback(_appReducer, value: \.self, action: \.self)
+//let appReducer = pullback(_appReducer, value: \.self, action: \.self)
 
-func logging<Value, Action>(
-    _ reducer: @escaping (inout Value, Action) -> Void
-) -> (inout Value, Action) -> Void {
-    return { value, action in
-        reducer(&value, action)
-        print("Action: \(action)")
-        print("Value:")
-        dump(value)
-        print("---")
-    }
-}
 
-final class Store<Value, Action>: ObservableObject {
-    let reducer: (inout Value, Action) -> Void
-    @Published var value : Value
-    
-    init(initialValue: Value, reducer: @escaping (inout Value, Action) -> Void) {
-        self.reducer = reducer
-        self.value = initialValue
-    }
-    
-    func send(_ action: Action) {
-        self.reducer(&self.value, action)
-    }
-}
+
+
 
 struct PrimeAlert: Identifiable {
     let prime: Int

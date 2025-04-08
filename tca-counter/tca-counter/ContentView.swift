@@ -7,6 +7,9 @@
 
 import SwiftUI
 import Combine
+import ComposableArchitecture
+import FavoritePrimes
+import Counter
 
 func wolframAlpha(
   query: String,

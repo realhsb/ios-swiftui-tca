@@ -1,10 +1,3 @@
-//
-//  AppState.swift
-//  tca-counter
-//
-//  Created by Subeen on 2/17/25.
-//
-
 import Foundation
 import SwiftUI
 
@@ -111,11 +104,6 @@ func primeModalReducer(
     }
 }
 
-//struct FavoritePrimesState {
-//    var favoritePrimes: [Int]
-//    var activityFeed: [AppState.Activity]
-//}
-
 func favoritePrimesReducer(state: inout [Int], action: FavoritePrimesAction) {
     switch action {
         case let .deleteFavoritePrimes(indexSet):
@@ -162,16 +150,12 @@ func activityFeed(
 // 큰 리듀서를 작은 리듀서로
 func combine<Value, Action> (
     _ reducers: (inout Value, Action) -> Void...
-//    _ first: @escaping (inout Value, Action) -> Void,
-//    _ second: @escaping (inout Value, Action) -> Void
 ) -> (inout Value, Action) -> Void {
     
     return { value, action in
         for reducers in reducers {
             reducers(&value, action)
         }
-//        first(&value, action)
-//        second(&value, action)
     }
 }
 
@@ -189,21 +173,6 @@ func pullback<GlobalValue, LocalValue, GlobalAction, LocalAction>(
     reducer(&globalValue[keyPath: value], localAction)
   }
 }
-
-//extension AppState {
-//    var favoritePrimesState: FavoritePrimesState {
-//        get {
-//            FavoritePrimesState(
-//                favoritePrimes: self.favoritePrimes,
-//                activityFeed: self.activityFeed
-//            )
-//        }
-//        set {
-//            self.favoritePrimes = newValue.favoritePrimes
-//            self.activityFeed = newValue.activityFeed
-//        }
-//    }
-//}
 
 // 액션 pullback을 위한 keypath 재정의 ( enum)
 struct _KeyPath<Root, Value> {
@@ -279,20 +248,8 @@ final class Store<Value, Action>: ObservableObject {
     
     func send(_ action: Action) {
         self.reducer(&self.value, action)
-//        print("Action: \(action)")
-//        print("Value:")
-//        dump(self.value)
-//        print("---")
     }
 }
-
-// Store<AppState>
-
-// @ObservedObject var state: AppState
-// -> @ObservedObject var store: Store<AppState>
-
-// self.state
-// -> self.store.value
 
 struct PrimeAlert: Identifiable {
     let prime: Int

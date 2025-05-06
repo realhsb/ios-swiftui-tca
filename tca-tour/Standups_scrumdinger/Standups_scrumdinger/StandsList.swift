@@ -106,7 +106,7 @@ extension LabelStyle where Self == TrailingIconLabelStyle {
             StandsListView(
                 store: Store(
                     initialState: StandupsListFeature.State(
-                        standsups: <#T##IdentifiedArrayOf<Standup>#>
+                        standsups: [.mock]
                     )
                 ) {
                     StandupsListFeature()

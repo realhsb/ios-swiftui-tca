@@ -36,7 +36,8 @@ struct StandupFormFeature: Reducer {
         //        case setTheme(Theme)
     }
     
-    var body: some ReducerOf<Self > {
+    var body: some ReducerOf<Self> {
+        BindingReducer()
         Reduce { state, action in
             switch action {
             case .addAttendeeButtonTapped:

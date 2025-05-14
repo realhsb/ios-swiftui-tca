@@ -14,13 +14,19 @@ struct StandupDetailFeature: Reducer {
         var standup: Standup
     }
     
+
+    
     enum Action {
         case cancelEditStandupButtonTapped
+        case delegate(Delegate)
         case deleteButtonTapped
         case deleteMeetings(atOffsets: IndexSet)
         case editButtonTapped
         case editStandup(PresentationAction<StandupFormFeature.Action>)
         case saveStandupButtonTapped
+        enum Delegate { // 자식 -> 부모 정보 전달
+            case standupUpdated(Standup)
+        }
     }
     
     var body: some ReducerOf<Self> {
@@ -30,12 +36,15 @@ struct StandupDetailFeature: Reducer {
                 state.editStandup
                 return .none
                 
+            case .delegate:
+                return .none
+                
             case .deleteButtonTapped:
                 return .none
                 
             case .deleteMeetings(atOffsets: let indices):
                 state.standup.meetings.remove(atOffsets: indices)
-                return .none
+                return .send(.delegate(.standupUpdated(state.standup)))
                 
             case .editButtonTapped:
                 state.editStandup = StandupFormFeature.State(standup: state.standup)
@@ -49,11 +58,18 @@ struct StandupDetailFeature: Reducer {
                 else { return .none }
                 state.standup = standup
                 state.editStandup = nil
-                return .none
+                return .send(.delegate(.standupUpdated(state.standup)))
             }
         }
         .ifLet(\.$editStandup, action: /Action.editStandup) {
             StandupFormFeature()
+        }
+        .onChange(of: \.standup) { oldValue, newValue in
+            /// 상태 변화 감지하여 자동 delegate 전송
+            ///  일일이 .send(.delegate(...))를 붙이지 않아도 자동으로 처리 가능
+            Reduce { state, action in
+                .send(.delegate(.standupUpdated(newValue)))
+            }
         }
     }
 }
@@ -136,6 +152,7 @@ struct StandupDetailView: View {
                     viewStore.send(.editButtonTapped)
                 }
             }
+        
             .sheet(store: self.store.scope(state: \.$editStandup, action: { .editStandup($0) })) { store in
                 NavigationStack {
                     StandupFormView(store: store)
@@ -154,6 +171,7 @@ struct StandupDetailView: View {
                         }
                 }
             }
+            
         }
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct StandupsListFeature: Reducer {
     struct State {
         @PresentationState var addStandup: StandupFormFeature.State?
-        var standsups: IdentifiedArrayOf<Standup> = []
+        var standups: IdentifiedArrayOf<Standup> = []
     }
     
     enum Action {
@@ -43,7 +43,7 @@ struct StandupsListFeature: Reducer {
             case .saveStandupButtonTapped:
                 guard let standup = state.addStandup?.standup
                 else { return .none }
-                state.standsups.append(standup)
+                state.standups.append(standup)
                 state.addStandup = nil
                 return .none
             }
@@ -56,16 +56,20 @@ struct StandupsListFeature: Reducer {
     }
 }
 
-struct StandsListView: View {
+struct StandupsListView: View {
     
     let store: StoreOf<StandupsListFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: \.standsups) { viewStore in
+        WithViewStore(self.store, observe: \.standups) { viewStore in
             List {
                 ForEach(viewStore.state) { standup in
-                    CardView(standup: standup)
-                        .listRowBackground(standup.theme.mainColor)
+                    NavigationLink.init(state: AppFeature.Path.State.detail(StandupDetailFeature.State(standup: standup))
+                    ) {
+                        CardView(standup: standup)
+                            .listRowBackground(standup.theme.mainColor)
+                    }
+                    
                 }
             }
             .navigationTitle("Daily Standups")
@@ -147,10 +151,10 @@ extension LabelStyle where Self == TrailingIconLabelStyle {
 #Preview {
     MainActor.assumeIsolated {
         NavigationStack {
-            StandsListView(
+            StandupsListView(
                 store: Store(
                     initialState: StandupsListFeature.State(
-                        standsups: [.mock]
+                        standups: [.mock]
                     )
                 ) {
                     StandupsListFeature()

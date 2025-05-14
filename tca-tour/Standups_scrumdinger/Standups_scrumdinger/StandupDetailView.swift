@@ -10,32 +10,63 @@ import SwiftUI
 
 struct StandupDetailFeature: Reducer {
     struct State: Equatable {
+        @PresentationState var alert: AlertState<Action.Alert>?
         @PresentationState var editStandup: StandupFormFeature.State?
         var standup: Standup
     }
     
+
+    
     enum Action {
         case cancelEditStandupButtonTapped
+        case alert(PresentationAction<Alert>)
+        case delegate(Delegate)
         case deleteButtonTapped
         case deleteMeetings(atOffsets: IndexSet)
         case editButtonTapped
         case editStandup(PresentationAction<StandupFormFeature.Action>)
         case saveStandupButtonTapped
+        enum Alert {
+            case confirmDeletion
+        }
+        enum Delegate { // 자식 -> 부모 정보 전달
+            case standupUpdated(Standup)
+        }
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .alert(.presented(.confirmDeletion)): // delete this standup
+                return .none
+                
+            case .alert(.dismiss):
+                return .none
+                
             case .cancelEditStandupButtonTapped:
                 state.editStandup
                 return .none
                 
+            case .delegate:
+                return .none
+                
             case .deleteButtonTapped:
+                if state.editStandup == nil && state.alert == nil {
+                    
+                }
+//                state.editStandup =
+                state.alert = AlertState {
+                    TextState("Are you sure you want to delete?")
+                } actions: {
+                    ButtonState(role: .destructive, action: .confirmDeletion) {
+                        TextState("Delete")
+                    }
+                }
                 return .none
                 
             case .deleteMeetings(atOffsets: let indices):
                 state.standup.meetings.remove(atOffsets: indices)
-                return .none
+                return .send(.delegate(.standupUpdated(state.standup)))
                 
             case .editButtonTapped:
                 state.editStandup = StandupFormFeature.State(standup: state.standup)
@@ -49,11 +80,19 @@ struct StandupDetailFeature: Reducer {
                 else { return .none }
                 state.standup = standup
                 state.editStandup = nil
-                return .none
+                return .send(.delegate(.standupUpdated(state.standup)))
             }
         }
+        .ifLet(\.$alert, action: /Action.alert)
         .ifLet(\.$editStandup, action: /Action.editStandup) {
             StandupFormFeature()
+        }
+        .onChange(of: \.standup) { oldValue, newValue in
+            /// 상태 변화 감지하여 자동 delegate 전송
+            ///  일일이 .send(.delegate(...))를 붙이지 않아도 자동으로 처리 가능
+            Reduce { state, action in
+                .send(.delegate(.standupUpdated(newValue)))
+            }
         }
     }
 }
@@ -136,6 +175,8 @@ struct StandupDetailView: View {
                     viewStore.send(.editButtonTapped)
                 }
             }
+            .alert(store: self.store.scope(state: \.$alert, action: {
+                .alert($0) }))
             .sheet(store: self.store.scope(state: \.$editStandup, action: { .editStandup($0) })) { store in
                 NavigationStack {
                     StandupFormView(store: store)
@@ -154,6 +195,7 @@ struct StandupDetailView: View {
                         }
                 }
             }
+            
         }
     }
 }
@@ -165,6 +207,7 @@ struct StandupDetailView: View {
             store: Store(initialState:
                             StandupDetailFeature.State(standup: .mock)) {
                                 StandupDetailFeature()
+                                    ._printChanges()
             }
         )
     }

@@ -29,14 +29,12 @@ struct StandupFormFeature: Reducer {
     
     enum Action: BindableAction {
         case addAttendeeButtonTapped
-        case binding(BindingAction<State>)
+        case binding(BindingAction<State>) // set... 같은 간단한 값변경 액션을 다룸
         case deleteAttendees(afOffsets: IndexSet)
-        //        case setTitle(String)
-        //        case setDuration(Duration)
-        //        case setTheme(Theme)
     }
     
-    var body: some ReducerOf<Self > {
+    var body: some ReducerOf<Self> {
+        BindingReducer()
         Reduce { state, action in
             switch action {
             case .addAttendeeButtonTapped:

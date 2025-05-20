@@ -27,7 +27,7 @@ struct StandupFormFeature: Reducer {
         }
     }
     
-    enum Action: BindableAction {
+    enum Action: BindableAction, Equatable { // Equatable 채택!
         case addAttendeeButtonTapped
         case binding(BindingAction<State>) // set... 같은 간단한 값변경 액션을 다룸
         case deleteAttendees(afOffsets: IndexSet)

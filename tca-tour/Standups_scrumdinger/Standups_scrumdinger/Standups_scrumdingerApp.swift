@@ -22,15 +22,16 @@ struct Standups_scrumdingerApp: App {
                 store: Store(
                     initialState: AppFeature.State(
                         path: StackState([
-                            .detail(
-                                StandupDetailFeature.State(
-                                    editStandup: StandupFormFeature.State(
-                                        focus: .attendee(editedStandup.attendees[3].id),
-                                        standup: editedStandup
-                                    ),
-                                    standup: .mock
-                                )
-                            )
+//                            .detail(
+//                                StandupDetailFeature.State(
+//                                    editStandup: StandupFormFeature.State(
+//                                        focus: .attendee(editedStandup.attendees[3].id),
+//                                        standup: editedStandup
+//                                    ),
+//                                    standup: .mock
+//                                )
+//                            )
+                             
                         ])
                     )) {
                        AppFeature()

@@ -10,21 +10,17 @@ import SwiftUI
 
 struct StandupDetailFeature: Reducer {
     struct State: Equatable {
-        @PresentationState var alert: AlertState<Action.Alert>?
-        @PresentationState var editStandup: StandupFormFeature.State?
+        @PresentationState var destination: Destination.State?
         var standup: Standup
     }
-    
 
-    
     enum Action {
         case cancelEditStandupButtonTapped
-        case alert(PresentationAction<Alert>)
         case delegate(Delegate)
         case deleteButtonTapped
         case deleteMeetings(atOffsets: IndexSet)
+        case destination(PresentationAction<Destination.Action>)
         case editButtonTapped
-        case editStandup(PresentationAction<StandupFormFeature.Action>)
         case saveStandupButtonTapped
         enum Alert {
             case confirmDeletion
@@ -34,58 +30,81 @@ struct StandupDetailFeature: Reducer {
         }
     }
     
+    // 하나의 Enum으로 화면 전환 상태 관리하기
+    struct Destination: Reducer {
+        enum State: Equatable {
+            case alert(AlertState<Action.Alert>)
+            case editStandup(StandupFormFeature.State)
+        }
+        
+        enum Action: Equatable {
+            case alert(Alert)
+            case editStandup(StandupFormFeature.Action)
+            enum Alert {
+                case confirmDeletion
+            }
+        }
+        
+        var body: some ReducerOf<Self> {
+            Scope(
+                state: /State.editStandup,
+                action: /Action.editStandup
+            ) {
+                StandupFormFeature()
+            }
+        }
+    }
+    
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .alert(.presented(.confirmDeletion)): // delete this standup
-                return .none
-                
-            case .alert(.dismiss):
-                return .none
-                
             case .cancelEditStandupButtonTapped:
-                state.editStandup
+                state.destination = nil
                 return .none
                 
             case .delegate:
                 return .none
                 
             case .deleteButtonTapped:
-                if state.editStandup == nil && state.alert == nil {
-                    
-                }
-//                state.editStandup =
-                state.alert = AlertState {
-                    TextState("Are you sure you want to delete?")
-                } actions: {
-                    ButtonState(role: .destructive, action: .confirmDeletion) {
-                        TextState("Delete")
+                state.destination = .alert(
+                    AlertState {
+                        TextState("Are you sure you want to delete?")
+                    } actions: {
+                        ButtonState(role: .destructive, action: .confirmDeletion) {
+                            TextState("Delete")
+                        }
                     }
-                }
+                )
                 return .none
                 
             case .deleteMeetings(atOffsets: let indices):
                 state.standup.meetings.remove(atOffsets: indices)
                 return .send(.delegate(.standupUpdated(state.standup)))
                 
-            case .editButtonTapped:
-                state.editStandup = StandupFormFeature.State(standup: state.standup)
+            // 화면 전환
+            case .destination(.presented(.alert(.confirmDeletion))):
+                return .none
+              
+            // 화면 전환
+            case .destination:
                 return .none
                 
-            case .editStandup(_):
+            case .editButtonTapped:
+                state.destination = .editStandup(StandupFormFeature.State(standup: state.standup))
                 return .none
                 
             case .saveStandupButtonTapped:
-                guard let standup = state.editStandup?.standup
+                guard case let .editStandup(standupForm) = state.destination
                 else { return .none }
-                state.standup = standup
-                state.editStandup = nil
-                return .send(.delegate(.standupUpdated(state.standup)))
+                state.standup = standupForm.standup
+                state.destination = nil
+                return .send(
+                    .delegate(.standupUpdated(standupForm.standup))
+                )
             }
         }
-        .ifLet(\.$alert, action: /Action.alert)
-        .ifLet(\.$editStandup, action: /Action.editStandup) {
-            StandupFormFeature()
+        .ifLet(\.$destination, action: /Action.destination) {
+            Destination()
         }
         .onChange(of: \.standup) { oldValue, newValue in
             /// 상태 변화 감지하여 자동 delegate 전송
@@ -175,9 +194,15 @@ struct StandupDetailView: View {
                     viewStore.send(.editButtonTapped)
                 }
             }
-            .alert(store: self.store.scope(state: \.$alert, action: {
-                .alert($0) }))
-            .sheet(store: self.store.scope(state: \.$editStandup, action: { .editStandup($0) })) { store in
+            .alert(
+                store: self.store.scope(state: \.$destination, action: { .destination($0) }),
+                state: /StandupDetailFeature.Destination.State.alert,
+                action: StandupDetailFeature.Destination.Action.alert
+            )
+            .sheet(store: self.store.scope(state: \.$destination, action: { .destination($0) }),
+                   state: /StandupDetailFeature.Destination.State.editStandup,
+                   action: StandupDetailFeature.Destination.Action.editStandup
+            ) { store in
                 NavigationStack {
                     StandupFormView(store: store)
                         .toolbar {

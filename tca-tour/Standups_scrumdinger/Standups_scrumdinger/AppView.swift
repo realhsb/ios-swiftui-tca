@@ -45,6 +45,11 @@ struct AppFeature: Reducer {
       case let .path(.element(id: id, action: .detail(.delegate(action)))):
           
           switch action { // 자식이 변경 사실을 알려주면, standupslist배열을 갱신해서 UI 최신화
+              
+          case let .deleteStandup(id: id):  // 상위 리듀서에서, standup 실제 삭제!
+              state.standupsList.standups.remove(id: id)
+              return .none
+              
           case let .standupUpdated(standup):
               state.standupsList.standups[id: standup.id] = standup
               return .none

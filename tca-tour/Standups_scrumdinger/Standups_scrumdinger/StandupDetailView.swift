@@ -26,9 +26,17 @@ struct StandupDetailFeature: Reducer {
             case confirmDeletion
         }
         enum Delegate { // 자식 -> 부모 정보 전달
+            case deleteStandup(id: Standup.ID)
             case standupUpdated(Standup)
         }
     }
+    
+    // SwiftUI의 `@Environment(\.dismiss) var dismiss`와 다른 점?
+    // @Environment(\.dismiss)는 뷰 안에서 사용 가능. -> 로직이 많을 경우, 뷰에 복잡한 비즈니스 로직 섞임.
+    // 반면, `@Dependency(\.dismiss)`는 Reducer내에서 사용 가능
+    @Dependency(\.dismiss) var dismiss
+    
+    
     
     // 하나의 Enum으로 화면 전환 상태 관리하기
     struct Destination: Reducer {
@@ -82,8 +90,11 @@ struct StandupDetailFeature: Reducer {
                 return .send(.delegate(.standupUpdated(state.standup)))
                 
             // 화면 전환
-            case .destination(.presented(.alert(.confirmDeletion))):
-                return .none
+            case .destination(.presented(.alert(.confirmDeletion))): // standups 편집창에서 delete 버튼을 눌렀을 때,
+                return .run { [id = state.standup.id] send in
+                    await send(.delegate(.deleteStandup(id: id)))
+                    await self.dismiss()    // standsup 삭제시, 화면 pop-off
+                }
               
             // 화면 전환
             case .destination:

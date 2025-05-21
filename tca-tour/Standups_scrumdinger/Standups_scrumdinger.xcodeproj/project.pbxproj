@@ -14,9 +14,22 @@
 		6C5AE9802DBA54AB00143952 /* Standups_scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standups_scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6C8CCAD62DDE54B700FD800F /* Exceptions for "Standups_scrumdinger" folder in "Standups_scrumdinger" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Standups-scrumdinger-Info.plist",
+			);
+			target = 6C5AE97F2DBA54AB00143952 /* Standups_scrumdinger */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6C5AE9822DBA54AB00143952 /* Standups_scrumdinger */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6C8CCAD62DDE54B700FD800F /* Exceptions for "Standups_scrumdinger" folder in "Standups_scrumdinger" target */,
+			);
 			path = Standups_scrumdinger;
 			sourceTree = "<group>";
 		};
@@ -263,6 +276,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Standups-scrumdinger-Info.plist";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "회의 내용을 음성으로 받아 텍스트로 기록하기 위해 사용됩니다.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -302,6 +317,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Standups-scrumdinger-Info.plist";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "회의 내용을 음성으로 받아 텍스트로 기록하기 위해 사용됩니다.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

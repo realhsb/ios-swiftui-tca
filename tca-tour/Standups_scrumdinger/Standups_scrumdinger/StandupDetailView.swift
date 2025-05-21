@@ -136,9 +136,9 @@ struct StandupDetailView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in // observe: { $0 } -> Standup 전부 관찰
             List {
                 Section {
-                    NavigationLink {
-                        
-                    } label: {
+                    NavigationLink (
+                        state: AppFeature.Path.State.recordMeeting(RecordMeetingFeature.State(standup: viewStore.standup))
+                    ) {
                         Label("Start Meeting", systemImage: "timer")
                             .font(.headline)
                             .foregroundColor(.accentColor)
